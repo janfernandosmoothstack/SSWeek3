@@ -65,9 +65,9 @@ public class LoginServlet extends HttpServlet {
 				PrintWriter out = response.getWriter();
 				
 				List<User> search = users.stream()
-										.filter(user -> (user.getUserName().equals(readUser.getUserName())) &&
-														(user.getPassword().equals(readUser.getPassword())))
-										.collect(Collectors.toList());
+						.filter(user -> (user.getUserName().equals(readUser.getUserName())) &&
+										(user.getPassword().equals(readUser.getPassword())))
+						.collect(Collectors.toList());
 				
 				if (search.isEmpty()) {
 					response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
