@@ -7,6 +7,7 @@ public class User {
 	public User() {}
 	
 	public User(String userName, String password) {
+		super();
 		this.userName = userName;
 		this.password = password;
 	}

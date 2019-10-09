@@ -18,7 +18,7 @@ import com.ss.dto.User;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet({"/login", "/login/", "/login/*"})
+@WebServlet({"/login", "/login/"})
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
 						.collect(Collectors.toList());
 				
 				if (search.isEmpty()) {
-					response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+					response.sendError(HttpServletResponse.SC_FORBIDDEN);
 				} else {
 					out.print("Access Granted");
 				}
