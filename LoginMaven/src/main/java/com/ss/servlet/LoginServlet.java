@@ -69,13 +69,11 @@ public class LoginServlet extends HttpServlet {
 										(user.getPassword().equals(readUser.getPassword())))
 						.collect(Collectors.toList());
 				
-				if(search != null) {
-					if (search.isEmpty()) {
+					if ((search.isEmpty()) && (search != null)) {
 						response.sendError(HttpServletResponse.SC_FORBIDDEN);
 					} else {
 						out.print("Access Granted");
 					}
-				}
 				
 				out.flush();
 				
